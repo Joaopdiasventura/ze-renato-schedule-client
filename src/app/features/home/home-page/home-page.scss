@@ -1,0 +1,103 @@
+$breakpoint-sm: 600px;
+$breakpoint-md: 900px;
+$gap: 1rem;
+$font-family: Arial, sans-serif;
+
+#registration {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $gap;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $gap;
+
+  > div {
+    flex: 1 1 100%;
+  }
+
+  .field {
+    width: 40%;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-family: $font-family;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: $font-family;
+    box-sizing: border-box;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-family: $font-family;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+
+    &:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+  }
+
+  #message {
+    color: #d00;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-family: $font-family;
+  margin: $gap 0;
+}
+
+#task-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $gap auto;
+  max-width: 800px;
+  overflow-x: auto;
+  display: table;
+
+  thead {
+    background-color: #f5f5f5;
+  }
+
+  th,
+  td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-family: $font-family;
+    white-space: nowrap;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  background-color: #fafafa;
+}

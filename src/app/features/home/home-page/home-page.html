@@ -1,0 +1,44 @@
+<h1>Agenda Simples</h1>
+<div id="registration">
+  <h2>Nova Tarefa</h2>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label for="title">Título:</label>
+      <input type="text" id="title" formControlName="title" />
+    </div>
+    <div class="field">
+      <label for="status">Status:</label>
+      <select id="status" formControlName="status">
+        @for (status of statusOptions; track $index) {
+        <option [value]="status">{{ statusLabels[status] }}</option>
+        }
+      </select>
+    </div>
+    <button type="submit" [disabled]="taskForm.invalid">Adicionar</button>
+    @if (taskForm.invalid) {
+    <div id="message">Por favor preencha todos os campos</div>
+    }
+  </form>
+</div>
+
+@if (tasks.length > 0) {
+<h2>Tarefas</h2>
+<table id="task-list">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="tasks-body">
+    @for (task of tasks; track $index) {
+    <tr>
+      <td>{{ task.title }}</td>
+      <td>{{ statusLabels[task.status] }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+} @else {
+<h2>Cadastre uma tarefa</h2>
+}
